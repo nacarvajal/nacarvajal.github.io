@@ -2,10 +2,381 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Marcaje Jats-XML para revistas SciELO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Marcaje JATS-XML | Publicación y ciencia abierta</title>
+
+  <meta name="description"
+        content="Servicio de marcaje JATS-XML para revistas científicas indizadas en SciELO Chile. Tecnología e inteligencia artificial con revisión humana.">
+
+  <style>
+    :root {
+      --azul-oscuro: #122b3a;
+      --azul: #1d5962;
+      --menta: #d9eee8;
+      --fondo: #f7f9f7;
+      --blanco: #ffffff;
+      --texto: #263b42;
+      --gris: #5c6d72;
+      --borde: #dce6e2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--fondo);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .contenedor {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Encabezado */
+
+    header {
+      background: var(--blanco);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .barra {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      color: var(--azul-oscuro);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .marca span {
+      color: var(--azul);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--gris);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--azul);
+    }
+
+    /* Portada */
+
+    .portada {
+      padding: 110px 0 100px;
+      background: linear-gradient(135deg, #f4faf7, #e6f1ed);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: var(--azul);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: var(--azul-oscuro);
+      line-height: 1.2;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0 0 24px;
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      letter-spacing: -0.04em;
+    }
+
+    .destacado {
+      max-width: 680px;
+      margin: 0 0 32px;
+      color: var(--gris);
+      font-size: 1.15rem;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 6px;
+      background: var(--azul);
+      color: var(--blanco);
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .boton:hover {
+      background: var(--azul-oscuro);
+    }
+
+    /* Contenido */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .introduccion {
+      max-width: 760px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 38px;
+    }
+
+    .tarjeta {
+      padding: 28px;
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+    }
+
+    .numero {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--azul);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .tarjeta p {
+      margin-bottom: 0;
+      color: var(--gris);
+      font-size: 0.96rem;
+    }
+
+    /* Metodología */
+
+    .metodologia {
+      background: var(--azul-oscuro);
+      color: #e1ece9;
+    }
+
+    .metodologia h2 {
+      color: var(--blanco);
+    }
+
+    .metodologia .etiqueta {
+      color: #a6d9c9;
+    }
+
+    .metodologia p {
+      max-width: 760px;
+    }
+
+    .sello {
+      margin-top: 30px;
+      padding: 18px 22px;
+      border-left: 3px solid #a6d9c9;
+      background: rgba(255, 255, 255, 0.06);
+      font-weight: 700;
+    }
+
+    /* Contacto y pie */
+
+    .contacto {
+      min-height: 200px;
+      background: var(--blanco);
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--borde);
+      color: var(--gris);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .barra {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+        gap: 12px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .portada {
+        padding: 75px 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .tarjetas {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hola, soy Nelson Carvajal</h1>
-  <p>Mi sitio web está en construcción.</p>
+
+  <header>
+    <div class="contenedor barra">
+      <a class="marca" href="#inicio">MARCAJE <span>JATS-XML</span></a>
+
+      <nav aria-label="Navegación principal">
+        <a href="#servicio">Servicio</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="portada" id="inicio">
+      <div class="contenedor">
+        <span class="etiqueta">Publicación científica y ciencia abierta</span>
+
+        <h1>Marcaje JATS-XML con tecnología y criterio humano</h1>
+
+        <p class="destacado">
+          Apoyamos a revistas científicas indizadas en SciELO Chile
+          en la preparación de sus artículos para la publicación digital.
+        </p>
+
+        <a class="boton" href="#servicio">Conoce nuestro servicio</a>
+      </div>
+    </section>
+
+    <section id="servicio">
+      <div class="contenedor">
+        <div class="introduccion">
+          <span class="etiqueta">Nuestro servicio</span>
+          <h2>Apoyo especializado para revistas científicas</h2>
+
+          <p>
+            Somos un grupo de profesionales comprometidos con la
+            publicación científica y la ciencia abierta. Realizamos
+            marcaje JATS-XML para revistas indizadas en SciELO Chile,
+            combinando herramientas especializadas con revisión humana.
+          </p>
+        </div>
+
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <span class="numero">01</span>
+            <h3>Envío de artículos</h3>
+            <p>
+              El equipo editorial nos envía los archivos de los artículos
+              en formato PDF para iniciar el proceso.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <span class="numero">02</span>
+            <h3>Marcaje y revisión</h3>
+            <p>
+              Estructuramos y marcamos los contenidos con herramientas
+              especializadas y apoyo de inteligencia artificial.
+              El proceso considera revisión humana.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <span class="numero">03</span>
+            <h3>Entrega del paquete</h3>
+            <p>
+              Entregamos el paquete SciELO completo para apoyar la
+              publicación de los artículos en la plataforma.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="metodologia" id="metodologia">
+      <div class="contenedor">
+        <span class="etiqueta">Nuestra metodología</span>
+        <h2>La tecnología apoya. Las personas deciden.</h2>
+
+        <p>
+          Utilizamos la herramienta Markup para el marcaje de los
+          artículos. Además, incorporamos inteligencia artificial como
+          apoyo en distintas etapas del proceso, con el propósito de
+          optimizar los tiempos y contribuir a la calidad del trabajo.
+        </p>
+
+        <p class="sello">
+          Nuestro sello: el criterio y la revisión humana están siempre
+          en el centro del proceso.
+        </p>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="contenedor">
+        <span class="etiqueta">Contacto</span>
+        <h2>Conversemos</h2>
+
+        <!-- Aquí agregaremos los datos de contacto más adelante. -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>Marcaje JATS-XML · Publicación científica y ciencia abierta</p>
+    </div>
+  </footer>
+
 </body>
 </html>
