@@ -362,13 +362,317 @@
     </section>
 
     <section class="contacto" id="contacto">
-      <div class="contenedor">
-        <span class="etiqueta">Contacto</span>
-        <h2>Conversemos</h2>
+  <div class="contenedor">
+    <span class="etiqueta">Contacto</span>
+    <h2>Conversemos</h2>
 
-        <!-- Aquí agregaremos los datos de contacto más adelante. -->
+    <p>
+      Cuéntanos quién eres y a qué revista perteneces.
+      Te contactaremos a través de WhatsApp.
+    </p>
+
+    <form id="formulario-contacto" class="formulario-contacto">
+
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Escribe tu nombre"
+        autocomplete="name"
+        required
+      >
+
+      <label for="revista">Revista</label>
+      <select id="revista" name="revista" required>
+        <option value="" selected disabled>
+          Selecciona tu revista
+        </option>
+      </select>
+
+      <div id="otra-revista-contenedor" hidden>
+        <label for="otra-revista">Nombre de la revista</label>
+        <input
+          type="text"
+          id="otra-revista"
+          name="otra-revista"
+          placeholder="Escribe el nombre de tu revista"
+        >
       </div>
-    </section>
+
+      <button type="submit" class="boton boton-whatsapp">
+        Contactar por WhatsApp
+      </button>
+
+      <p class="nota-contacto">
+        Al continuar se abrirá WhatsApp con un mensaje que podrás revisar
+        antes de enviarlo.
+      </p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    max-width: 550px;
+    margin-top: 28px;
+  }
+
+  .formulario-contacto label {
+    color: var(--azul-oscuro);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .formulario-contacto input,
+  .formulario-contacto select {
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border: 1px solid #cbdad4;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--texto);
+    font: inherit;
+  }
+
+  .formulario-contacto input:focus,
+  .formulario-contacto select:focus {
+    outline: 2px solid var(--azul);
+    outline-offset: 2px;
+  }
+
+  #otra-revista-contenedor {
+    width: 100%;
+  }
+
+  #otra-revista-contenedor:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .boton-whatsapp {
+    margin-top: 4px;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .nota-contacto {
+    color: var(--gris);
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+</style>
+
+<script>
+  // Títulos vigentes de la lista alfabética de SciELO Chile.
+  // Puedes agregar o corregir títulos manteniendo uno por línea.
+  const revistas = `
+Acta bioethica
+Acta literaria
+Aisthesis - Revista Chilena de Investigaciones Estéticas
+Alpha (Osorno) - Revista de artes, letras y filosofía
+Anales del Instituto de la Patagonia
+Andean geology
+Andes pediatrica
+Antropologías del sur
+ARQ (Santiago) - arquitectura, diseño, urbanismo, Chile
+Arquitecturas del sur
+ARS medica (Santiago)
+Atenea (Concepción)
+Austral Journal of Imaging
+Austral journal of veterinary sciences
+Autoctonía (Santiago)
+Biological Research
+Boletín de filología
+Boletín del Museo Chileno de Arte Precolombino
+Bosque (Valdivia)
+Byzantion nea hellás
+Calidad en la educación
+Castalia (Santiago) - Revista de psicología de la academia
+Chilean journal of agricultural & animal sciences
+Chilean journal of agricultural research
+Chungará (Arica) - Revista de antropología chilena
+Ciencia y enfermería - Revista iberoamericana de investigación
+Ciencias de la actividad física (Talca)
+Cinta de moebio
+Comunicación y medios
+Cuadernos de historia (Santiago)
+Cuadernos de neuropsicología
+Cuadernos.info
+Cubo (Temuco) - A mathematical journal
+CUHSO (Temuco)
+Cultura y religión
+Diálogo andino - Revista de Historia, Geografía y Cultura
+Estudios atacameños - Arqueología y antropología surandinas
+Estudios constitucionales - Revista Semestral del Centro de Estudios Constitucionales de Chile
+Estudios de economía
+Estudios filológicos
+Estudios internacionales (Santiago) - Revista del Instituto de Estudios Internacionales de la Universidad de Chile
+Estudios pedagógicos (Valdivia)
+EURE (Santiago) - Revista latinoamericana de estudios urbano regionales
+Formación universitaria
+Gayana (Concepción) - International Journal of Biodiversity, Oceanology and Conservation
+Gayana. Botánica
+Historia (Santiago)
+Idesia (Arica)
+Información tecnológica
+Ingeniare. Revista chilena de ingeniería
+International journal of agriculture and natural resources
+International journal of interdisciplinary dentistry
+International Journal of Morphology
+International journal of odontostomatology
+Ius et Praxis
+Izquierdas
+Journal of technology management & innovation
+Journal of the Chilean Chemical Society
+Latin american journal of aquatic research
+Latin american legal studies
+Límite (Arica)
+Literatura y lingüística
+Logos (La Serena) - Revista de lingüística, filosofía y literatura
+Maderas. Ciencia y tecnología
+Magallania (Punta Arenas)
+Multidisciplinary business review
+Mutatis Mutandis: revista internacional de filosofía
+Neuma (Talca) - Revista de música y docencia musical
+Nueva revista del Pacífico
+Obras y proyectos
+Pensamiento educativo - Revista de investigación educacional Latinoamericana
+Perspectiva Educacional
+Perspectivas de la comunicación
+Pléyade (Santiago)
+Polis (Santiago) - Revista Latinoamericana
+Política criminal
+Pro Jure Revista de Derecho
+Proyecciones (Antofagasta) - Revista de matemática
+Psicoperspectivas - Individuo y sociedad
+Psykhe (Santiago)
+RAN (Chillán) - Revista Academia & Negocios
+Revista 180
+Revista chilena de anestesia
+Revista chilena de cardiología
+Revista chilena de derecho
+Revista chilena de derecho privado
+Revista chilena de derecho y ciencia política
+Revista chilena de derecho y tecnología
+Revista chilena de enfermedades respiratorias
+Revista chilena de entomología
+Revista chilena de estudios medievales
+Revista chilena de historia natural
+Revista chilena de infectología
+Revista chilena de literatura
+Revista chilena de neuro-psiquiatría
+Revista chilena de nutrición
+Revista chilena de obstetricia y ginecología
+Revista de análisis económico
+Revista de arquitectura (Santiago)
+Revista de biología marina y oceanografía
+Revista de ciencia política (Santiago)
+Revista de ciencias sociales (Valparaíso)
+Revista de cirugía
+Revista de derecho (Concepción)
+Revista de derecho (Coquimbo)
+Revista de derecho (Valdivia)
+Revista de derecho ambiental (Santiago)
+Revista de estudios histórico-jurídicos
+Revista de estudios y experiencias en educación
+Revista de filosofía
+Revista de geografía Norte Grande
+Revista de historia (Concepción)
+Revista de Historia Social y de las Mentalidades
+Revista de humanidades de Valparaíso
+Revista de la construcción
+Revista de otorrinolaringología y cirugía de cabeza y cuello
+Revista de psicología (Santiago)
+Revista de urbanismo
+Revista enfoques educacionales
+Revista estudios de políticas públicas
+Revista gestión de las personas y tecnología
+Revista hábitat sustentable
+Revista iberoamericana de estudios municipales
+Revista ingeniería de construcción
+Revista interamericana de ambiente y turismo
+Revista INVI
+Revista latinoamericana de educación inclusiva
+Revista médica de Chile
+Revista musical chilena
+Revista signos - Estudios de lingüística
+RIVAR (Santiago) - Revista Iberoamericana de Viticultura, Agroindustria y Ruralidad
+RLA. Revista de lingüística teórica y aplicada
+Rumbos TS - Un espacio crítico para la reflexión en ciencias sociales
+Si Somos Americanos - Revista de estudios transfronterizos
+Sophia Austral
+Teología y vida
+Terapia psicológica
+Tiempo histórico
+Ultima década
+Universum (Talca) - Revista de humanidades y ciencias sociales
+Urbano (Concepción)
+Veritas - Revista de filosofía y teología
+  `.trim().split("\n");
+
+  const selectorRevista = document.getElementById("revista");
+  const otraRevistaContenedor = document.getElementById("otra-revista-contenedor");
+  const otraRevistaInput = document.getElementById("otra-revista");
+  const formulario = document.getElementById("formulario-contacto");
+
+  revistas.forEach(function (revista) {
+    const opcion = document.createElement("option");
+    opcion.value = revista;
+    opcion.textContent = revista;
+    selectorRevista.appendChild(opcion);
+  });
+
+  const opcionOtra = document.createElement("option");
+  opcionOtra.value = "otra";
+  opcionOtra.textContent = "Otra revista";
+  selectorRevista.appendChild(opcionOtra);
+
+  selectorRevista.addEventListener("change", function () {
+    const seleccionoOtra = selectorRevista.value === "otra";
+
+    otraRevistaContenedor.hidden = !seleccionoOtra;
+    otraRevistaInput.required = seleccionoOtra;
+
+    if (!seleccionoOtra) {
+      otraRevistaInput.value = "";
+    }
+  });
+
+  formulario.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const revista = selectorRevista.value === "otra"
+      ? otraRevistaInput.value.trim()
+      : selectorRevista.value;
+
+    if (!nombre || !revista) {
+      alert("Por favor, completa tu nombre y selecciona tu revista.");
+      return;
+    }
+
+    const mensaje =
+      "Hola, mi nombre es " + nombre +
+      " y pertenezco a la revista " + revista +
+      ". Me gustaría recibir información sobre el servicio de marcaje JATS-XML.";
+
+    const enlace = "https://wa.me/56972157845?text=" +
+      encodeURIComponent(mensaje);
+
+    window.location.href = enlace;
+  });
+</script>
 
   </main>
 
