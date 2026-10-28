@@ -276,6 +276,47 @@
   object-fit: cover;
   object-position: center bottom;
 }
+    /* Mantiene el menú visible al desplazarse */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(18, 43, 58, 0.06);
+}
+
+/* Encabezado más compacto */
+.barra {
+  min-height: 60px;
+}
+
+.marca {
+  font-size: 0.95rem;
+}
+
+nav a {
+  font-size: 0.85rem;
+}
+
+/* Evita que el menú tape los títulos al navegar */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 700px) {
+  .barra {
+    padding: 10px 0;
+    gap: 6px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  section[id] {
+    scroll-margin-top: 110px;
+  }
+}
   </style>
 </head>
 
