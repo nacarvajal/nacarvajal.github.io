@@ -352,6 +352,7 @@ section[id] {
   }
 }
   </style>
+  <script defer src="analytics.js"></script>
 </head>
 
 <body>
@@ -851,6 +852,10 @@ Veritas - Revista de filosofía y teología
     const enlace = "https://wa.me/56972157845?text=" +
       encodeURIComponent(mensaje);
 
+    // Register the intention to contact; never send the form values to GA4.
+    if (typeof window.trackWhatsAppIntent === "function") {
+      window.trackWhatsAppIntent();
+    }
     window.location.href = enlace;
   });
 </script>
