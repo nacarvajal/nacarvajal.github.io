@@ -22,6 +22,27 @@
         content="Servicio de marcaje JATS XML: estructura editorial y preparación para SciELO Chile.">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Datos estructurados del servicio de marcaje JATS XML -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marcaje JATS XML para revistas SciELO Chile",
+    "serviceType": "Marcaje y preparación de artículos científicos en JATS XML para SciELO",
+    "description": "Servicio de marcaje JATS XML con preparación de tablas, figuras y referencias, revisión humana y entrega del paquete editorial SciELO.",
+    "url": "https://nacarvajal.github.io/",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Marcaje JATS-XML",
+      "url": "https://nacarvajal.github.io/"
+    }
+  }
+  </script>
+
   <style>
     :root {
       --azul-oscuro: #122b3a;
@@ -349,13 +370,18 @@ section[id] {
 
   <main>
 <div class="banner-principal">
-  <img
-    src="header-jats-xml.png"
-    alt="Entorno de trabajo editorial con código XML: estructura estándar, calidad editorial y preparación para indexación."
-    width="2048"
-    height="748"
-    fetchpriority="high"
-  >
+  <picture>
+    <source media="(max-width: 700px)" srcset="header-jats-xml-800.webp" type="image/webp">
+    <source srcset="header-jats-xml-1600.webp" type="image/webp">
+    <img
+      src="header-jats-xml.png"
+      alt="Entorno de trabajo editorial con código XML: estructura estándar, calidad editorial y preparación para indexación."
+      width="2048"
+      height="748"
+      decoding="async"
+      fetchpriority="high"
+    >
+  </picture>
 </div>
     <section class="portada" id="inicio">
       <div class="contenedor">
