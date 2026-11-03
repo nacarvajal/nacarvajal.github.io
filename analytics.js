@@ -1,11 +1,10 @@
-/* Google Analytics 4 configuration.
- * Replace the empty ID with your genuine GA4 Web data stream Measurement ID.
- * Until configured, this file sends NO data and loads NO Google scripts.
+/* Google Analytics 4 configuration for nacarvajal.github.io.
+ * Confirm privacy/consent requirements before merging into production.
  */
 (() => {
   "use strict";
 
-  const MEASUREMENT_ID = ""; // Example format: G-XXXXXXXXXX (do not use this example).
+  const MEASUREMENT_ID = "G-2JQSDFBF6N";
   const configured = /^G-[A-Z0-9]{6,}$/i.test(MEASUREMENT_ID);
 
   if (configured) {
