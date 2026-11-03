@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>¿Qué es JATS XML? Uso en revistas científicas | Marcaje JATS XML</title>
+  <meta name="description" content="Conoce qué es JATS XML, cómo estructura artículos científicos y por qué facilita el intercambio editorial, la preservación y la interoperabilidad.">
+  <link rel="canonical" href="https://nacarvajal.github.io/que-es-jats-xml.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="Marcaje JATS XML">
+  <meta property="og:title" content="¿Qué es JATS XML? Uso en revistas científicas | Marcaje JATS XML">
+  <meta property="og:description" content="Conoce qué es JATS XML, cómo estructura artículos científicos y por qué facilita el intercambio editorial, la preservación y la interoperabilidad.">
+  <meta property="og:url" content="https://nacarvajal.github.io/que-es-jats-xml.html">
+  <meta property="og:image" content="https://nacarvajal.github.io/header-jats-xml.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{--dark:#122b3a;--teal:#1d5962;--ink:#263b42;--gray:#5c6d72;--bg:#f7f9f7;--border:#dce6e2}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.75 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:var(--teal);text-underline-offset:3px}a:hover{color:var(--dark)}
+    a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+    .skip{position:absolute;top:-60px;left:1rem;padding:.5rem 1rem;background:#fff;z-index:10}.skip:focus{top:1rem}
+    header{position:sticky;top:0;z-index:5;background:white;border-bottom:1px solid var(--border);box-shadow:0 2px 10px #122b3a0f}
+    .container{width:min(960px,90%);margin:auto}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:65px;flex-wrap:wrap;padding:10px 0}
+    .brand{font-weight:700;color:var(--dark);text-decoration:none}
+    nav{display:flex;gap:16px;flex-wrap:wrap}nav a{font-size:.9rem;text-decoration:none}
+    main{padding:45px 0 65px}
+    .crumb{font-size:.88rem;color:var(--gray)}
+    article{background:#fff;border:1px solid var(--border);border-radius:12px;padding:clamp(20px,5vw,55px);margin-top:20px}
+    .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+    h1,h2,h3{color:var(--dark);line-height:1.3}
+    h1{font-size:clamp(2rem,4.3vw,3.1rem);margin:12px 0 20px}
+    h2{font-size:1.6rem;margin:42px 0 13px}
+    h3{font-size:1.15rem;margin-top:24px}
+    .lead{font-size:1.13rem;color:var(--gray)}
+    p,li{max-width:75ch}li{margin:8px 0}
+    pre{padding:18px;overflow-x:auto;background:#edf4f2;border-radius:8px;font-size:.91rem}
+    .oferta{padding:24px;border:1px solid var(--border);background:#f4faf7;border-radius:8px}
+    .monto{font-size:2rem;font-weight:700;color:var(--dark);margin:0}
+    .monto small{display:block;font-size:.95rem;font-weight:400}
+    .cta{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;border-radius:6px;padding:12px 20px;margin-top:24px}
+    .cta:hover{background:var(--dark);color:#fff}
+    .refs{border-top:1px solid var(--border);padding-top:16px;margin-top:45px;font-size:.93rem}
+    footer{padding:27px 0;background:white;border-top:1px solid var(--border);font-size:.88rem;color:var(--gray)}
+    @media(max-width:700px){main{padding-top:20px}.bar{align-items:flex-start;flex-direction:column;gap:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header><div class="container bar"><a class="brand" href="index.html">MARCAJE JATS-XML</a>
+<nav aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="que-es-jats-xml.html">Qué es JATS</a><a href="requisitos-xml-scielo-chile.html">XML SciELO</a><a href="servicio-marcaje-jats-xml.html">Precios y servicio</a><a href="index.html#contacto">Contacto</a></nav></div></header>
+<main id="contenido" class="container">
+<p class="crumb"><a href="index.html">Inicio</a> / ¿Qué es JATS XML y para qué sirve en una revista científica?</p>
+<article>
+<p class="eyebrow">Publicación científica · Marcaje XML</p>
+<h1>¿Qué es JATS XML y para qué sirve en una revista científica?</h1>
+<p class="lead">JATS (Journal Article Tag Suite) es un estándar para representar artículos académicos mediante XML. Permite identificar de forma estructurada sus metadatos, secciones, tablas, figuras y referencias bibliográficas.</p>
+<section><h2>Del documento visual a la estructura editorial</h2><p>Un PDF presenta el artículo para su lectura, mientras que el XML JATS describe qué representa cada parte del contenido. Por ejemplo, diferencia el título de un artículo, el resumen, una afiliación institucional y una referencia bibliográfica. Esto facilita que diferentes sistemas procesen la información de manera consistente.</p><p>JATS es mantenido por NISO. La versión 1.4 corresponde al estándar ANSI/NISO Z39.96-2024; una revista o plataforma puede utilizar un perfil o versión específica, por lo que siempre es necesario confirmar sus requisitos de entrega.</p></section>
+<section><h2>¿Qué elementos se marcan?</h2><ul><li><strong>Metadatos:</strong> títulos, autoría, afiliaciones, DOI, resúmenes y palabras clave.</li><li><strong>Cuerpo del artículo:</strong> apartados, párrafos, citas, tablas, ecuaciones y figuras.</li><li><strong>Información final:</strong> referencias bibliográficas, agradecimientos, declaraciones y material complementario cuando corresponde.</li></ul></section>
+<section><h2>Ejemplo simplificado de estructura JATS</h2><p>Este fragmento ilustra la diferencia entre un título identificado semánticamente y texto sin estructura. No representa por sí solo un XML completo ni validado.</p><pre><code>&lt;article-title&gt;Resultados de la investigación&lt;/article-title&gt;
+&lt;abstract&gt;
+  &lt;p&gt;Resumen del estudio...&lt;/p&gt;
+&lt;/abstract&gt;</code></pre></section>
+<section><h2>¿Qué beneficios aporta?</h2><p>El marcado estructurado permite reutilizar la información en diferentes formatos, facilita los procesos de interoperabilidad y contribuye a la gestión y preservación de los contenidos editoriales. La calidad del resultado depende tanto del cumplimiento del esquema como de la fidelidad del contenido, los vínculos y los identificadores.</p></section>
+<section><h2>JATS y SciELO: una distinción importante</h2><p>JATS es el estándar general; <a href="requisitos-xml-scielo-chile.html">SciELO Publishing Schema (SPS)</a> añade convenciones y validaciones para los flujos de publicación de SciELO. Por ello, un archivo XML bien formado no necesariamente está listo para la entrega en una colección SciELO.</p></section>
+<p><a class="cta" href="index.html#contacto">Consultar por WhatsApp</a></p>
+<aside class="refs"><h2>Referencias y enlaces relacionados</h2><ul><li><a href="https://www.niso.org/standards-committees/jats" target="_blank" rel="noopener noreferrer">Estándar JATS, NISO</a></li><li><a href="https://jats.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">Documentación técnica de JATS</a></li></ul></aside>
+</article></main>
+<footer><div class="container">Marcaje JATS-XML · Publicación científica y ciencia abierta · <a href="index.html">Volver al inicio</a></div></footer>
+</body></html>
