@@ -4,7 +4,7 @@
 (() => {
   "use strict";
 
-  const MEASUREMENT_ID = "G-2JQSDFBF6N";
+  const MEASUREMENT_ID = "G-86VJ1WG4XF";
   const configured = /^G-[A-Z0-9]{6,}$/i.test(MEASUREMENT_ID);
 
   if (configured) {
