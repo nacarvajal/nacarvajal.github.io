@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nacarvajal.github.io/</loc>
-  </url>
+  <url><loc>https://nacarvajal.github.io/</loc></url>
+  <url><loc>https://nacarvajal.github.io/que-es-jats-xml.html</loc></url>
+  <url><loc>https://nacarvajal.github.io/requisitos-xml-scielo-chile.html</loc></url>
+  <url><loc>https://nacarvajal.github.io/servicio-marcaje-jats-xml.html</loc></url>
 </urlset>
