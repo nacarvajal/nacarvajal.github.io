@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Marcaje XML para SciELO Chile: preparación y validación | Guía</title>
+  <meta name="description" content="Guía para editores sobre preparación, marcaje y validación de artículos XML para SciELO Chile. Conoce el flujo y las verificaciones necesarias.">
+  <link rel="canonical" href="https://nacarvajal.github.io/requisitos-xml-scielo-chile.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="Marcaje JATS XML">
+  <meta property="og:title" content="Marcaje XML para SciELO Chile: preparación y validación | Guía">
+  <meta property="og:description" content="Guía para editores sobre preparación, marcaje y validación de artículos XML para SciELO Chile. Conoce el flujo y las verificaciones necesarias.">
+  <meta property="og:url" content="https://nacarvajal.github.io/requisitos-xml-scielo-chile.html">
+  <meta property="og:image" content="https://nacarvajal.github.io/header-jats-xml.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{--dark:#122b3a;--teal:#1d5962;--ink:#263b42;--gray:#5c6d72;--bg:#f7f9f7;--border:#dce6e2}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.75 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:var(--teal);text-underline-offset:3px}a:hover{color:var(--dark)}
+    a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+    .skip{position:absolute;top:-60px;left:1rem;padding:.5rem 1rem;background:#fff;z-index:10}.skip:focus{top:1rem}
+    header{position:sticky;top:0;z-index:5;background:white;border-bottom:1px solid var(--border);box-shadow:0 2px 10px #122b3a0f}
+    .container{width:min(960px,90%);margin:auto}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:65px;flex-wrap:wrap;padding:10px 0}
+    .brand{font-weight:700;color:var(--dark);text-decoration:none}
+    nav{display:flex;gap:16px;flex-wrap:wrap}nav a{font-size:.9rem;text-decoration:none}
+    main{padding:45px 0 65px}
+    .crumb{font-size:.88rem;color:var(--gray)}
+    article{background:#fff;border:1px solid var(--border);border-radius:12px;padding:clamp(20px,5vw,55px);margin-top:20px}
+    .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+    h1,h2,h3{color:var(--dark);line-height:1.3}
+    h1{font-size:clamp(2rem,4.3vw,3.1rem);margin:12px 0 20px}
+    h2{font-size:1.6rem;margin:42px 0 13px}
+    h3{font-size:1.15rem;margin-top:24px}
+    .lead{font-size:1.13rem;color:var(--gray)}
+    p,li{max-width:75ch}li{margin:8px 0}
+    pre{padding:18px;overflow-x:auto;background:#edf4f2;border-radius:8px;font-size:.91rem}
+    .oferta{padding:24px;border:1px solid var(--border);background:#f4faf7;border-radius:8px}
+    .monto{font-size:2rem;font-weight:700;color:var(--dark);margin:0}
+    .monto small{display:block;font-size:.95rem;font-weight:400}
+    .cta{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;border-radius:6px;padding:12px 20px;margin-top:24px}
+    .cta:hover{background:var(--dark);color:#fff}
+    .refs{border-top:1px solid var(--border);padding-top:16px;margin-top:45px;font-size:.93rem}
+    footer{padding:27px 0;background:white;border-top:1px solid var(--border);font-size:.88rem;color:var(--gray)}
+    @media(max-width:700px){main{padding-top:20px}.bar{align-items:flex-start;flex-direction:column;gap:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header><div class="container bar"><a class="brand" href="index.html">MARCAJE JATS-XML</a>
+<nav aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="que-es-jats-xml.html">Qué es JATS</a><a href="requisitos-xml-scielo-chile.html">XML SciELO</a><a href="servicio-marcaje-jats-xml.html">Precios y servicio</a><a href="index.html#contacto">Contacto</a></nav></div></header>
+<main id="contenido" class="container">
+<p class="crumb"><a href="index.html">Inicio</a> / Marcaje XML para SciELO Chile: preparación, validación y entrega</p>
+<article>
+<p class="eyebrow">Publicación científica · Marcaje XML</p>
+<h1>Marcaje XML para SciELO Chile: preparación, validación y entrega</h1>
+<p class="lead">Para preparar artículos para SciELO no basta con transformar un PDF en XML: es necesario representar fielmente la estructura del artículo, aplicar el perfil editorial requerido y validar los archivos y recursos asociados.</p>
+<section><h2>1. Confirmar el perfil y las instrucciones vigentes</h2><p>SciELO Publishing Schema (SPS) adapta JATS a las necesidades de las colecciones SciELO. Antes de iniciar un lote, conviene confirmar con la revista o la coordinación de SciELO Chile la versión aplicable, el tipo documental, las reglas de identificación y los formatos de entrega. Las reglas y versiones pueden actualizarse, y ciertas instrucciones publicadas para SciELO Brasil no deben suponerse idénticas a las de Chile.</p></section>
+<section><h2>2. Revisar el artículo fuente</h2><p>Se verifica que el PDF final incluya títulos, autorías, afiliaciones, resúmenes, secciones, tablas, figuras, referencias y notas. Se revisan especialmente los DOI, los caracteres especiales, los vínculos entre citas y referencias y la integridad de las leyendas de imágenes. Cualquier duda editorial debe aclararse antes de normalizar el marcaje.</p></section>
+<section><h2>3. Estructurar y marcar el contenido</h2><p>En la etapa de marcaje se identifican los elementos semánticos correspondientes en XML. Pueden utilizarse herramientas como Markup u otras soluciones compatibles con SPS. La herramienta no reemplaza la revisión del contenido: una etiqueta formalmente correcta puede contener datos equivocados.</p></section>
+<section><h2>4. Validar y corregir</h2><p>La validación considera estructura XML, cumplimiento de las reglas del perfil, referencias a figuras, correspondencia de archivos y coherencia bibliográfica. SciELO documenta <em>XML Package Maker</em> para validar paquetes SPS y <em>Markup</em> como una opción para producirlos. Los mensajes de error o advertencia deben revisarse antes de entregar.</p></section>
+<section><h2>5. Preparar el paquete editorial</h2><p>La entrega reúne el XML validado y los recursos complementarios requeridos por la revista, como imágenes y PDF, de acuerdo con las especificaciones de la colección. La aceptación o publicación definitiva depende del flujo y de las verificaciones de la entidad receptora; no se garantiza automáticamente por haber generado el XML.</p></section>
+<section><h2>Lista breve de control</h2><ul><li>El artículo y sus metadatos coinciden con la versión aprobada.</li><li>Las tablas, figuras, leyendas y referencias están completas.</li><li>El XML cumple el perfil solicitado y supera las validaciones pertinentes.</li><li>Los archivos asociados y sus nombres son coherentes.</li><li>El equipo editorial revisa y aprueba el material antes de su entrega.</li></ul><p>Si tu revista necesita externalizar esta preparación, consulta el <a href="servicio-marcaje-jats-xml.html">alcance y precio del servicio</a>.</p></section>
+<p><a class="cta" href="index.html#contacto">Consultar por WhatsApp</a></p>
+<aside class="refs"><h2>Referencias y enlaces relacionados</h2><ul><li><a href="https://www.scielo.org/es/sobre-el-scielo/metodologias-y-tecnologias/" target="_blank" rel="noopener noreferrer">Metodologías y tecnologías, SciELO</a></li><li><a href="https://documentacao.scielo.org/books/scielo-pc-programs/page/bienvenido-a-la-documentacion-de-scielo-pc-programs" target="_blank" rel="noopener noreferrer">Herramientas SciELO PC Programs</a></li><li><a href="https://scielo.readthedocs.io/projects/scielo-publishing-schema/pt_BR/latest/" target="_blank" rel="noopener noreferrer">SciELO Publishing Schema</a></li></ul></aside>
+</article></main>
+<footer><div class="container">Marcaje JATS-XML · Publicación científica y ciencia abierta · <a href="index.html">Volver al inicio</a></div></footer>
+</body></html>
